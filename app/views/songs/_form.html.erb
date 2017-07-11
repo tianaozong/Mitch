@@ -11,37 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :artist %>
-    <%= form.text_field :artist, id: :song_artist %>
+  <div class="form-group" style="max-width: 400px">
+    <h5>Title:</h5>
+    <%= form.text_field :title, class: "form-control input-lg" %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :song_title %>
+  <div class="form-group" style="max-width: 400px">
+    <h5>Artist:</h5>
+    <%= form.text_field :artist, class: "form-control input-lg" %>
   </div>
 
-  <div class="field">
-    <%= form.label :genre %>
+  <div class="form-group" style="max-width: 400px">
+    <h5>Genre: </h5>
     <%= form.select :genre, [
-                                  ["Alternative rock" , "Alternative rock"],
-                                  ["rock" , "rock"],
-                                  ["love" , "love"],
-                                  ["classical" , "classical"],
-                                  ["Techno" , "Techno"],
-                                  ["Jazz" , "Jazz"],
-                                  ["Dramatic" , "Dramatic"],
-                                  ["Blues" , "Blues"],
-                                  ["pop" , "pop"],
-                                  ].sort, prompt:"select genre..." ,id: :song_genre %>
+                            ["Alternative Rock", "Alternative Rock"],
+                            ["Rock", "Rock"],
+                            ["Pop", "Pop"],
+                            ["Techno", "Techno"],
+                            ["Jazz", "Jazz"],
+                            ["Blues", "Blues"],
+                            ["Classical", "Classical"],
+                            ["Dramatic", "Dramatic"]
+                            ].sort, prompt: "Select genre...", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :song_link %>
+  <div class="form-group" style="max-width: 400px">
+    <h5>Youtube ID (example: ztIEogFr9j4)</h5>
+    <%= form.text_field :link, class: "form-control input-lg" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Post Song', class: "btn btn-primary btn-lg" %>
   </div>
 <% end %>
